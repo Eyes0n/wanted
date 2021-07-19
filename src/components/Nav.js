@@ -10,8 +10,8 @@ import DropdownMenu from './DropdownMenu';
 const Navbar = () => {
   const [isShowDropdownMenu, setIsShowDropdownMenu] = useState(false);
 
-  const handleShowDropdownMenu = (bool, i) => {
-    if (i === 1) setIsShowDropdownMenu(bool);
+  const handleShowDropdownMenu = (i) => {
+    if (i === 1) setIsShowDropdownMenu(true);
     else setIsShowDropdownMenu(false);
   };
 
@@ -20,6 +20,7 @@ const Navbar = () => {
     if (innerText !== '탐색' || innerText === undefined)
       setIsShowDropdownMenu(false);
   };
+
   return (
     <NavContainer onClick={handleOuterClick}>
       <Nav>
@@ -31,7 +32,7 @@ const Navbar = () => {
           {MENULIST.map((menu, i) => (
             <MenuItem
               key={menu.id}
-              onMouseEnter={(e) => handleShowDropdownMenu(true, i)}
+              onMouseEnter={() => handleShowDropdownMenu(i)}
             >
               <Link to="/">{menu.title}</Link>
             </MenuItem>
@@ -159,6 +160,7 @@ const MenuItem = styled.li`
     }
 
     ${({ theme }) => theme.MakeNthChildDisplayNone(4, 8)};
+    // 위 코드랑 같은 의미
     /* &:nth-child(4) {
       display: none;
     }
