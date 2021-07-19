@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { ReactComponent as SearchSVG } from '../SvgImages/search.svg';
 import { ReactComponent as BellSVG } from '../SvgImages/bell.svg';
+import { ReactComponent as HamburgerMenuSVG } from '../SvgImages/hamburger.svg';
+
 import DropdownMenu from './DropdownMenu';
 
 const Navbar = () => {
   const [isShowDropdownMenu, setIsShowDropdownMenu] = useState(false);
 
   const handleShowDropdownMenu = (bool, i) => {
-    if (i === 0) setIsShowDropdownMenu(bool);
+    if (i === 1) setIsShowDropdownMenu(bool);
     else setIsShowDropdownMenu(false);
   };
 
@@ -31,8 +33,8 @@ const Navbar = () => {
           ))}
         </MenuList>
 
-        <AsideList>
-          <ul>
+        <AsideContainer>
+          <AsideList>
             <AsideLi>
               <button type="button">
                 <SearchSVG />
@@ -51,10 +53,15 @@ const Navbar = () => {
               </AvatarBtn>
             </AsideLi>
             <AsideLi>
+              <AvatarBtn type="button">
+                <HamburgerMenuSVG />
+              </AvatarBtn>
+            </AsideLi>
+            <AsideLi>
               <DashBoardLink to="/">기업 서비스</DashBoardLink>
             </AsideLi>
-          </ul>
-        </AsideList>
+          </AsideList>
+        </AsideContainer>
       </Nav>
       <DropdownMenu
         isShowDropdownMenu={isShowDropdownMenu}
@@ -67,6 +74,7 @@ const Navbar = () => {
 export default Navbar;
 
 const MENULIST = [
+  { id: 0, title: '홈' },
   { id: 1, title: '탐색' },
   { id: 2, title: '커리어 성장' },
   { id: 3, title: '직군별 연봉' },
@@ -75,24 +83,19 @@ const MENULIST = [
   { id: 6, title: '프리랜서' },
 ];
 
-// 반응형 Nav 적용하기
-// @media (min-width: 1200px)
-// Nav {
-//     margin: 0 auto;
-//     height: 50px;
-// }
-
-// @media (min-width: 1200px)
-// Nav {
-//     width: 87.72%;
-// }
-
 const NavContainer = styled.nav`
   position: fixed;
   width: 100%;
   background-color: #fff;
   box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
   z-index: 100;
+
+  @media ${({ theme }) => theme.tablet} {
+    width: 100%;
+    height: 57px;
+    padding-top: 4px;
+    margin: 0 auto;
+  }
 `;
 
 const Nav = styled.nav`
@@ -101,11 +104,14 @@ const Nav = styled.nav`
   max-width: 1060px;
   height: 50px;
   margin: 0 auto;
-  /* background-color: yellow; */
 `;
 
 const Logo = styled.div`
   ${({ theme }) => theme.FlexSet('', 'center')}
+
+  @media ${({ theme }) => theme.tablet} {
+    display: none;
+  }
 `;
 
 const LogoLink = styled(Link)`
@@ -132,8 +138,43 @@ const MenuItem = styled.li`
     font-weight: 600;
     padding: 15px;
   }
+
+  &:first-child {
+    display: none;
+  }
+
+  @media ${({ theme }) => theme.tablet} {
+    // logo none
+    &:first-child {
+      display: flex;
+    }
+
+    &:hover {
+      border-bottom: 2px solid #258bf7;
+    }
+
+    ${({ theme }) => theme.MakeNthChildDisplayNone(4, 8)};
+    /* &:nth-child(4) {
+      display: none;
+    }
+    &:nth-child(5) {
+      display: none;
+    }
+    &:nth-child(6) {
+      display: none;
+    }
+    &:nth-child(7) {
+      display: none;
+    }
+    &:nth-child(8) {
+      display: none;
+    } */
+  }
 `;
 
+const AsideContainer = styled.div`
+  height: 100;
+`;
 const AsideList = styled.ul`
   height: 100;
 `;
@@ -160,6 +201,24 @@ const AsideLi = styled.li`
     height: 10px;
     background-color: #e1e2e3;
     margin: auto 10px;
+  }
+
+  &:nth-last-child(2) {
+    display: none;
+  }
+
+  @media ${({ theme }) => theme.tablet} {
+    &:nth-last-child(2) {
+      display: inline-block;
+    }
+
+    &:nth-last-child(3) {
+      display: none;
+    }
+
+    &:last-child {
+      display: none;
+    }
   }
 `;
 

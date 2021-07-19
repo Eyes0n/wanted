@@ -16,4 +16,8 @@ export default App;
 
 const MainSection = styled.main`
   padding-top: 50px;
+
+  @media ${({ theme }) => theme.tablet} {
+    padding-top: 57px;
+  }
 `;

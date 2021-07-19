@@ -7,6 +7,20 @@ const FlexSet = (horizon, vertical, direction) => css`
   flex-direction: ${direction || 'row'};
 `;
 
-const mixin = { FlexSet };
+const MakeNthChildDisplayNone = (start, end) => {
+  let styles = '';
+
+  for (let i = start; i < end; i++) {
+    styles += `&:nth-child(${i}) {
+      display: none;
+    }`;
+  }
+
+  return css`
+    ${styles}
+  `;
+};
+
+const mixin = { FlexSet, MakeNthChildDisplayNone };
 
 export default mixin;
