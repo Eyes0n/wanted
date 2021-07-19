@@ -15,8 +15,13 @@ const Navbar = () => {
     else setIsShowDropdownMenu(false);
   };
 
+  const handleOuterClick = (e) => {
+    const { innerText } = e.target;
+    if (innerText !== '탐색' || innerText === undefined)
+      setIsShowDropdownMenu(false);
+  };
   return (
-    <NavContainer>
+    <NavContainer onClick={handleOuterClick}>
       <Nav>
         <Logo>
           <LogoLink to="/">wanted</LogoLink>
@@ -26,7 +31,7 @@ const Navbar = () => {
           {MENULIST.map((menu, i) => (
             <MenuItem
               key={menu.id}
-              onMouseEnter={() => handleShowDropdownMenu(true, i)}
+              onMouseEnter={(e) => handleShowDropdownMenu(true, i)}
             >
               <Link to="/">{menu.title}</Link>
             </MenuItem>
