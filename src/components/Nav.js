@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { ReactComponent as SearchSVG } from '../SvgImages/search.svg';
@@ -9,16 +9,15 @@ import DropdownMenu from './DropdownMenu';
 
 const Navbar = () => {
   const [isShowDropdownMenu, setIsShowDropdownMenu] = useState(false);
+  const searchRef = useRef(null);
 
-  const handleShowDropdownMenu = (i) => {
-    if (i === 1) setIsShowDropdownMenu(true);
+  const handleShowDropdownMenu = (bool) => {
+    if (bool) setIsShowDropdownMenu(true);
     else setIsShowDropdownMenu(false);
   };
 
   const handleOuterClick = (e) => {
-    const { innerText } = e.target;
-    if (innerText !== '탐색' || innerText === undefined)
-      setIsShowDropdownMenu(false);
+    if (!searchRef.current.contains(e.target)) setIsShowDropdownMenu(false);
   };
 
   return (
@@ -32,7 +31,12 @@ const Navbar = () => {
           {MENULIST.map((menu, i) => (
             <MenuItem
               key={menu.id}
-              onMouseOver={() => handleShowDropdownMenu(i)}
+              ref={i === 1 ? searchRef : null}
+              onMouseEnter={
+                i === 1
+                  ? () => handleShowDropdownMenu(true)
+                  : () => handleShowDropdownMenu(false)
+              }
             >
               <Link to="/">{menu.title}</Link>
             </MenuItem>

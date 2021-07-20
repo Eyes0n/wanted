@@ -6,7 +6,7 @@ const DropdownMenu = ({ isShowDropdownMenu, handleShowDropdownMenu }) => {
   return (
     <DropdownMenuWrapper
       isShowMenu={isShowDropdownMenu}
-      onMouseOver={() => handleShowDropdownMenu(false, 1)}
+      onMouseOver={() => handleShowDropdownMenu(false)}
     >
       <CenterContainer
         isShowMenu={isShowDropdownMenu}
