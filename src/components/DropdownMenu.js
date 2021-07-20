@@ -129,6 +129,7 @@ const CenterContainer = styled.div`
   height: ${({ isShowMenu }) => (isShowMenu ? '100%' : '0')};
   max-height: 370px;
   background-color: #fff;
+  visibility: ${({ isShowMenu }) => (isShowMenu ? 'visible' : 'hidden')};
   transition: 0.5s;
 `;
 

@@ -15,8 +15,9 @@ const App = () => {
 export default App;
 
 const MainSection = styled.main`
+  height: 100vh;
   padding-top: 50px;
-
+  background-color: yellow;
   @media ${({ theme }) => theme.tablet} {
     padding-top: 57px;
   }

@@ -59,9 +59,9 @@ const Navbar = () => {
               </AvatarBtn>
             </AsideLi>
             <AsideLi>
-              <AvatarBtn type="button">
+              <HamburgerBtn type="button">
                 <HamburgerMenuSVG />
-              </AvatarBtn>
+              </HamburgerBtn>
             </AsideLi>
             <AsideLi>
               <DashBoardLink to="/">기업 서비스</DashBoardLink>
@@ -96,12 +96,10 @@ const NavContainer = styled.nav`
   box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
   z-index: 100;
 
-  @media ${({ theme }) => theme.tablet} {
+  /* @media ${({ theme }) => theme.tablet} {
     width: 100%;
-    height: 57px;
-    padding-top: 4px;
     margin: 0 auto;
-  }
+  } */
 `;
 
 const Nav = styled.nav`
@@ -110,6 +108,11 @@ const Nav = styled.nav`
   max-width: 1060px;
   height: 50px;
   margin: 0 auto;
+
+  @media ${({ theme }) => theme.tablet} {
+    height: 57px;
+    padding-top: 4px;
+  }
 `;
 
 const Logo = styled.div`
@@ -126,12 +129,13 @@ const LogoLink = styled(Link)`
 `;
 
 const MenuList = styled.ul`
+  height: 100%;
   ${({ theme }) => theme.FlexSet('', 'center')}
 `;
 
 const MenuItem = styled.li`
   display: flex;
-  height: 50px;
+  height: 100%;
 
   &:hover {
     border-bottom: 2px solid #ddd;
@@ -147,6 +151,10 @@ const MenuItem = styled.li`
 
   &:first-child {
     display: none;
+
+    a {
+      padding: 14px 13px 19px 20px;
+    }
   }
 
   @media ${({ theme }) => theme.tablet} {
@@ -157,6 +165,10 @@ const MenuItem = styled.li`
 
     &:hover {
       border-bottom: 2px solid #258bf7;
+    }
+
+    a {
+      padding: 14px 13px 19px;
     }
 
     ${({ theme }) => theme.MakeNthChildDisplayNone(4, 8)};
@@ -196,7 +208,7 @@ const AsideLi = styled.li`
   button {
     position: relative;
     margin-top: 5px;
-    padding: 0 8px;
+    padding: 0 10px;
     background-color: inherit;
     border: none;
   }
@@ -215,6 +227,10 @@ const AsideLi = styled.li`
   }
 
   @media ${({ theme }) => theme.tablet} {
+    button {
+      margin-top: 0;
+    }
+
     &:nth-last-child(2) {
       display: inline-block;
     }
@@ -251,6 +267,12 @@ const Avatar = styled.img`
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
+`;
+
+const HamburgerBtn = styled.button`
+  @media ${({ theme }) => theme.tablet} {
+    margin-right: 10px;
+  }
 `;
 
 const DashBoardLink = styled(Link)`
