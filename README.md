@@ -14,6 +14,10 @@
 ## 🛠 사용한 기술
 <br><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/><br><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/><br><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/><br><img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"/><br><img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"/><br><img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/>
 
+## Refactoring [Notion link](https://www.wanted.co.kr/newintro)
+- MakeNthChildDisplayNone
+- handleShowDropdownMenu
+- handleOuterClick
 ## Reference
 - 이 프로젝트는 [wanted](https://www.wanted.co.kr/newintro) 사이트를 참조하여 학습목적으로 만들었습니다.
 - 학습용으로 만들었기 때문에 이 코드를 활용하여 이득을 취하거나 무단 배포할 경우 법적으로 문제될 수 있습니다.
