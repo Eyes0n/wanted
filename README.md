@@ -14,7 +14,7 @@
 ## 🛠 사용한 기술
 <br><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/><br><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/><br><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/><br><img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"/><br><img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"/><br><img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/>
 
-## Refactoring [Notion link](https://www.wanted.co.kr/newintro)
+## Refactoring [Notion link](https://grizzled-stinger-868.notion.site/Wanted-Onboarding-2dd6d9e61be14096860f5a24b43b8ba0)
 - MakeNthChildDisplayNone
 - handleShowDropdownMenu
 - handleOuterClick
