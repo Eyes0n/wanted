@@ -32,7 +32,7 @@ const Navbar = () => {
             <MenuItem
               key={menu.id}
               ref={i === 1 ? searchRef : null}
-              onMouseEnter={
+              onMouseOver={
                 i === 1
                   ? () => handleShowDropdownMenu(true)
                   : () => handleShowDropdownMenu(false)
