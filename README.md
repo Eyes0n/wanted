@@ -4,4 +4,4 @@ wanted onboarding 과제
 반응형 Nav 구현
 
 
-<video width=800 src="https://user-images.githubusercontent.com/45257139/126189857-2b6ac05f-7bd6-4c45-b9c0-aefdda95feca.mov" />
+<img src="https://user-images.githubusercontent.com/45257139/126263671-f611d675-4dcd-458a-9413-84399195a33a.gif" />
