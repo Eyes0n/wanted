@@ -43,6 +43,7 @@ const TitleText = styled.div`
     color: #333;
     font-size: 17px;
     line-height: 20px;
+    font-weight: 500;
     vertical-align: top;
     text-overflow: ellipsis;
     white-space: nowrap;
