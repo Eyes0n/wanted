@@ -32,7 +32,7 @@ const Navbar = () => {
           {MENULIST.map((menu, i) => (
             <MenuItem
               key={menu.id}
-              onMouseEnter={() => handleShowDropdownMenu(i)}
+              onMouseOver={() => handleShowDropdownMenu(i)}
             >
               <Link to="/">{menu.title}</Link>
             </MenuItem>
